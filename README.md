@@ -6,7 +6,7 @@ Utilizing Python on Google Collab, we imported data regarding Amazon Video Game 
 
 The next step was to create an Relational Database Service(RDS) on Amazon Web Services that we then linked to PGAdmin on my local device.  AWS allows a user to process large amounts of data on their server which would take much more time to process this 'Big Data' on a PC than it does on their more powerful servers.
 
-[!image](url)
+![AWS to RDS](https://github.com/MXV0921/Amazon_Review_ETL/blob/main/Images/aws_to_rds.png)
 
 ## Reading Data via PGAdmin
 After our data was imported to our RDS, we linked our database to our local PGAdmin where it could be more easily accessible for further processing and reading.
@@ -15,22 +15,27 @@ Amazon offers a program called 'Vine' for its members.  We took our Video Game d
 
 Data was filtered and we looked at reviews that were over 50% and there was over 20 votes cast for the item. From this data we then created two more tables, one for Vine Members and ONe for non-Vine users.
 
-[!image](url)
+![filtered_votes](https://github.com/MXV0921/Amazon_Review_ETL/blob/main/Images/votes_over_20.png)
 
 ## Results
 The processes for filtering this data into the tables we were looking for was similar after breaking into 'Vine Yes or No" tables we used similar syntax to find the following information.
 
-[!Vine Yes No](url)
+[!Vine Yes No](https://github.com/MXV0921/Amazon_Review_ETL/blob/main/Images/Vine_Y_N.png)
 
 ### Vine Reviews
 * There were 94 total Vine 'Y' Reviews
 * There were 48 'Y' Vine 5 Star Reviews
 * 51% of the Vine Reviews were 5 Stars
 
+![Vine_Yes](https://github.com/MXV0921/Amazon_Review_ETL/blob/main/Images/Vine_Yes_Total.png)
+
 ### Non Vine Reviews
 * There were 40471 total Vine 'N' Reviews
 * There were 15663 'N' Vine 5 Star Reviews
 * 39% of the Non Vine Reviews were 5 Stars
+
+![Vine_No](https://github.com/MXV0921/Amazon_Review_ETL/blob/main/Images/Vine_No_Total.png)
+
 ```
 INSERT INTO total_paid_reviews(total_reviews)
 SELECT COUNT(vine)
